@@ -1,0 +1,60 @@
+{
+    "rules": {
+        "class-name": true,
+        "curly": true,
+        "eofline": true,
+        "indent": [
+            true,
+            "spaces"
+        ],
+        "no-any": false,
+        "no-consecutive-blank-lines": [true],
+        "no-internal-module": true,
+        "no-require-imports": true,
+        "no-unreachable": true,
+        "no-unused-variable": [
+            true,
+            "react"
+        ],
+        "no-use-before-declare": true,
+        "no-var-keyword": true,
+        "one-line": [
+            true,
+            "check-open-brace",
+            "check-catch",
+            "check-else",
+            "check-whitespace"
+        ],
+        "semicolon": [
+            true,
+            "always"
+        ],
+        "triple-equals": [
+            true,
+            "allow-null-check"
+        ],
+        "typedef-whitespace": [
+            true,
+            {
+                "call-signature": "nospace",
+                "index-signature": "nospace",
+                "parameter": "nospace",
+                "property-declaration": "nospace",
+                "variable-declaration": "nospace"
+            }
+        ],
+        "variable-name": [
+            true,
+            "check-format",
+            "allow-leading-underscore"
+        ],
+        "whitespace": [
+            true,
+            "check-branch",
+            "check-decl",
+            "check-operator",
+            "check-separator",
+            "check-type"
+        ]
+    }
+}
