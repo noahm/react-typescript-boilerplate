@@ -19,6 +19,7 @@ module.exports = {
     },
     module: {
         loaders: [
+            { loader: 'style!css!sass', test: /\.scss$/ },
             { loader: 'ts-loader', test: /\.tsx?$/, exclude: /node_modules/ },
         ]
     },
