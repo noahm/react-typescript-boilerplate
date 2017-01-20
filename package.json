@@ -1,8 +1,9 @@
 {
   "name": "react-typescript-boilerplate",
   "scripts": {
-    "start": "node devserver.js",
-    "build": "node_modules/.bin/webpack --config webpack-prod.config.js --progress --profile --colors --optimize-minimize"
+    "start": "node scripts/devserver.js",
+    "clean": "node scripts/clean.js",
+    "build": "node scripts/build.js"
   },
   "version": "1.0.0",
   "description": "",
@@ -29,6 +30,7 @@
     "@types/whatwg-fetch": "^0.0.32",
     "css-loader": "^0.26.1",
     "file-loader": "^0.9.0",
+    "fs-extra": "^2.0.0",
     "html-webpack-plugin": "^2.26.0",
     "node-sass": "^4.3.0",
     "sass-loader": "^4.1.1",
