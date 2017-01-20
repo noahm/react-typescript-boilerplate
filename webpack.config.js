@@ -4,7 +4,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    devtool: 'source-map',
+    devtool: '#inline-source-map',
     entry: [
         'webpack-dev-server/client?http://localhost:3000',
         './src/main.tsx',
@@ -20,6 +20,7 @@ module.exports = {
     module: {
         loaders: [
             { loader: 'style!css!sass', test: /\.scss$/ },
+            { loader: 'file-loader', test: /\.(jpg|png|gif)$/ },
             { loader: 'ts-loader', test: /\.tsx?$/, exclude: /node_modules/ },
         ]
     },

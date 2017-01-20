@@ -9,7 +9,7 @@ module.exports = {
         './src/main.tsx',
     ],
     output: {
-        path: 'build/',
+        path: path.join(__dirname, 'build'),
         filename: 'app.js',
         publicPath: '',
     },
@@ -18,6 +18,8 @@ module.exports = {
     },
     module: {
         loaders: [
+            { loader: 'style!css!sass', test: /\.scss$/ },
+            { loader: 'file-loader', test: /\.(jpg|png|gif)$/ },
             { loader: 'ts-loader', test: /\.tsx?$/, exclude: /node_modules/ },
         ]
     },
