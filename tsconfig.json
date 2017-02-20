@@ -1,13 +1,14 @@
 {
     "compilerOptions": {
-        "target": "es5",
-        "module": "commonjs",
-        "jsx": "react",
+        "target": "es2016",
+        "module": "es6",
+        "jsx": "preserve",
+        "sourceMap": true,
         "experimentalDecorators": true,
         "noImplicitAny": true,
         "suppressImplicitAnyIndexErrors": true,
         "moduleResolution": "node",
-        "lib": ["dom", "es2016"]
+        "lib": ["dom", "es2015", "es2016"]
     },
     "exclude": [
         "node_modules"

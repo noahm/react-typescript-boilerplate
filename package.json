@@ -1,7 +1,7 @@
 {
   "name": "react-typescript-boilerplate",
   "scripts": {
-    "start": "node scripts/devserver.js",
+    "start": "node scripts/start.js",
     "clean": "node scripts/clean.js",
     "build": "node scripts/build.js"
   },
@@ -14,6 +14,11 @@
     ""
   ],
   "dependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-es2016": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^4.4.6",

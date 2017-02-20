@@ -21,7 +21,11 @@ module.exports = {
         loaders: [
             { loader: 'style!css!sass', test: /\.scss$/ },
             { loader: 'file-loader', test: /\.(jpg|png|gif)$/ },
-            { loader: 'ts-loader', test: /\.tsx?$/, exclude: /node_modules/ },
+            {
+                loader: 'babel-loader?presets[]=es2016&presets[]=es2015&presets[]=react!ts-loader',
+                test: /\.tsx?$/,
+                exclude: /node_modules/,
+            },
         ]
     },
     plugins: [
