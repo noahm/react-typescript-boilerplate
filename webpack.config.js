@@ -15,16 +15,46 @@ module.exports = {
         publicPath: '/',
     },
     resolve: {
-        extensions: ['', '.js', '.ts', '.tsx'],
+        extensions: ['.js', '.ts', '.tsx'],
     },
     module: {
-        loaders: [
-            { loader: 'style!css!sass', test: /\.scss$/ },
-            { loader: 'file-loader', test: /\.(jpg|png|gif)$/ },
+        rules: [
             {
-                loader: 'babel-loader?presets[]=es2016&presets[]=es2015&presets[]=react!ts-loader',
+                test: /\.scss$/,
+                use: [
+                    {
+                        loader: 'style-loader'
+                    },
+                    {
+                        loader: 'css-loader'
+                    },
+                    {
+                        loader: 'sass-loader'
+                    }
+                ],
+            },
+            {
+                test: /\.(jpg|png|gif)$/,
+                loader: 'file-loader',
+            },
+            {
                 test: /\.tsx?$/,
                 exclude: /node_modules/,
+                use: [
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: [
+                                'es2016',
+                                ['es2015', { modules: false }],
+                                'react',
+                            ]
+                        }
+                    },
+                    {
+                        loader: 'ts-loader',
+                    },
+                ],
             },
         ]
     },
