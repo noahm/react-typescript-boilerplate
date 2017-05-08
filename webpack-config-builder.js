@@ -3,8 +3,8 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const ENV_DEV = 0;
-const ENV_PRODUCTION = 1;
+const ENV_DEV = 1;
+const ENV_PRODUCTION = 2;
 
 module.exports = {
   ENV_DEV,
@@ -13,7 +13,11 @@ module.exports = {
     const isDev = env === ENV_DEV;
     const entry = ['./src/main.tsx'];
     if (isDev) {
-      entry.unshift('webpack-dev-server/client?http://localhost:3000');
+      entry.unshift(
+        'react-hot-loader/patch',
+        'webpack-dev-server/client?http://localhost:3000',
+        'webpack/hot/only-dev-server'
+      );
     }
 
     const plugins = [
@@ -22,7 +26,12 @@ module.exports = {
           title: 'Ticket Printer'
         }),
       ];
-    if (!isDev) {
+    if (isDev) {
+      plugins.unshift(
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NamedModulesPlugin()
+      );
+    } else {
       plugins.unshift(
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production'),
@@ -58,20 +67,9 @@ module.exports = {
           {
             test: /\.tsx?$/,
             exclude: /node_modules/,
-            use: [
-              {
-                loader: 'babel-loader',
-                options: {
-                  presets: [
-                    'es2016',
-                    ['es2015', { modules: false }],
-                    'react',
-                  ]
-                }
-              },
-              {
-                loader: 'ts-loader',
-              },
+            loaders: [
+              'react-hot-loader/webpack',
+              'ts-loader',
             ],
           },
         ]
