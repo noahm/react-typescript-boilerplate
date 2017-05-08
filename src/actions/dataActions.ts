@@ -3,10 +3,9 @@ import { Dispatch } from 'redux';
 import { GlobalStateGetter } from "../state/GlobalState";
 
 // Fetch List Succeeded
-export type FETCH_LIST_SUCCEEDED = 'FETCH_LIST_SUCCEEDED';
-export const FETCH_LIST_SUCCEEDED: FETCH_LIST_SUCCEEDED = 'FETCH_LIST_SUCCEEDED';
+export const FETCH_LIST_SUCCEEDED = 'FETCH_LIST_SUCCEEDED';
 export type FetchListSucceeded = {
-    type: FETCH_LIST_SUCCEEDED;
+    type: typeof FETCH_LIST_SUCCEEDED;
     data: any,
 };
 
