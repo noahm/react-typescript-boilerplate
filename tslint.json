@@ -11,11 +11,11 @@
         "no-consecutive-blank-lines": [true],
         "no-internal-module": true,
         "no-require-imports": true,
-        "no-unreachable": true,
         "no-unused-variable": [
             true,
             "react"
         ],
+        "no-unused-expression": true,
         "no-use-before-declare": true,
         "no-var-keyword": true,
         "one-line": [

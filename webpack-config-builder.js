@@ -14,7 +14,6 @@ module.exports = {
     const entry = ['./src/main.tsx'];
     if (isDev) {
       entry.unshift(
-        'react-hot-loader/patch',
         'webpack-dev-server/client?http://localhost:3000',
         'webpack/hot/only-dev-server'
       );
@@ -55,9 +54,9 @@ module.exports = {
           {
             test: /\.scss$/,
             use: [
-              { loader: 'style-loader' },
-              { loader: 'css-loader' },
-              { loader: 'sass-loader' },
+              'style-loader',
+              'css-loader',
+              'sass-loader',
             ],
           },
           {
@@ -67,8 +66,8 @@ module.exports = {
           {
             test: /\.tsx?$/,
             exclude: /node_modules/,
-            loaders: [
-              'react-hot-loader/webpack',
+            use: [
+              'babel-loader',
               'ts-loader',
             ],
           },

@@ -1,7 +1,7 @@
 import { DataState } from '../state/DataState';
 // import { FetchListSucceeded, FETCH_LIST_SUCCEEDED } from '../actions/data';
 
-type Actions = void;
+type Actions = {};
 
 const initialState: DataState = {
 };

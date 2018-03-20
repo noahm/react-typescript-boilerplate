@@ -1,8 +1,10 @@
 import { Component } from 'react';
 import * as React from 'react';
+import { hot } from 'react-hot-loader';
 import './App.scss';
 
-export class App extends Component<React.Props<App>, void> {
+@hot(module)
+export class App extends Component<{}> {
     render() {
         return <div id="App">
             <h1>Hello world!</h1>

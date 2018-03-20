@@ -1,7 +1,7 @@
 # React + Typescript Boilerplate
 
 ## Setup
-If you don't already have node 7 and npm 3 installed, square that away first.
+If you don't already have node 9 and npm 5 installed, square that away first.
 If you don't have yarn installed, `npm install -g yarn`
 
 Clone this repo, and install its dependencies:
