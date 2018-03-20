@@ -15,7 +15,7 @@ function fetchListSucceeded(params: any): FetchListSucceeded {
 
 // Fetch List Thunk
 export function fetchData(params: any) {
-    return (dispatch: Dispatch<any>, getState: GlobalStateGetter) => {
+    return (dispatch: Dispatch<any>, _getState: GlobalStateGetter) => {
 
         const request = fetch(`/api/list/${encodeURI(params.data)}`);
         request.then(resp => resp.json() as Promise<any>).then(response => {

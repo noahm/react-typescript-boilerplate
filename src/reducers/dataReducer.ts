@@ -6,7 +6,7 @@ type Actions = {};
 const initialState: DataState = {
 };
 
-export function dataReducer(state: DataState = initialState, action: Actions) {
+export function dataReducer(state: DataState = initialState, _action: Actions) {
     // switch (action.type) {
     //     case FETCH_LIST_SUCCEEDED:
     //         // create a new state

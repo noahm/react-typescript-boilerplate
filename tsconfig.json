@@ -7,6 +7,10 @@
         "experimentalDecorators": true,
         "noImplicitAny": true,
         "suppressImplicitAnyIndexErrors": true,
+        "alwaysStrict": true,
+        "noUnusedLocals": true,
+        "strictNullChecks": true,
+        "noUnusedParameters": true,
         "moduleResolution": "node",
         "lib": ["dom", "es2015", "es2016"]
     },
